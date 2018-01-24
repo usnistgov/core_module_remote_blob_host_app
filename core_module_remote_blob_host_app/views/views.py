@@ -5,14 +5,14 @@ from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
 
 from core_module_blob_host_app.views.views import BlobHostModule
-from core_parser_app.tools.modules.views.builtin.input_module import InputModule
+from core_parser_app.tools.modules.views.builtin.input_module import AbstractInputModule
 
 
-class RemoteBlobHostModule(InputModule):
+class RemoteBlobHostModule(AbstractInputModule):
     def __init__(self):
         """ Initialize the module
         """
-        InputModule.__init__(self, label='Enter the URL of a file:')
+        AbstractInputModule.__init__(self, label='Enter the URL of a file:')
 
     def _render_module(self, request):
         """ Render module
@@ -23,7 +23,7 @@ class RemoteBlobHostModule(InputModule):
         Returns:
 
         """
-        return InputModule._render_module(self, request)
+        return AbstractInputModule._render_module(self, request)
 
     def _retrieve_data(self, request):
         """ Return module's data

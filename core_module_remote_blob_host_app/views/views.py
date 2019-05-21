@@ -47,7 +47,7 @@ class RemoteBlobHostModule(AbstractInputModule):
                 try:
                     url_validator(url)
                     data = url
-                except ValidationError, e:
+                except ValidationError as e:
                     self.error = ' '.join(e.messages)
 
         return data

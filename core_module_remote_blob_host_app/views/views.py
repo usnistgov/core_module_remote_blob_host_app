@@ -4,8 +4,10 @@
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
 
+from core_module_remote_blob_host_app.settings import AUTO_ESCAPE_XML_ENTITIES
 from core_module_blob_host_app.views.views import BlobHostModule
 from core_parser_app.tools.modules.views.builtin.input_module import AbstractInputModule
+from xml_utils.xsd_tree.operations.xml_entities import XmlEntities
 
 
 class RemoteBlobHostModule(AbstractInputModule):
@@ -36,6 +38,7 @@ class RemoteBlobHostModule(AbstractInputModule):
         """
         data = ''
         self.error = None
+        data_xml_entities = XmlEntities()
         if request.method == 'GET':
             if 'data' in request.GET:
                 if len(request.GET['data']) > 0:
@@ -50,7 +53,7 @@ class RemoteBlobHostModule(AbstractInputModule):
                 except ValidationError as e:
                     self.error = ' '.join(e.messages)
 
-        return data
+        return data_xml_entities.escape_xml_entities(data) if AUTO_ESCAPE_XML_ENTITIES else data
 
     def _render_data(self, request):
         """ Return module's data rendering

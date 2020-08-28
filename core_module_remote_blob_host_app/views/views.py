@@ -9,12 +9,11 @@ from xml_utils.xsd_tree.operations.xml_entities import XmlEntities
 
 class RemoteBlobHostModule(AbstractInputModule):
     def __init__(self):
-        """ Initialize the module
-        """
+        """Initialize the module"""
         AbstractInputModule.__init__(self, label="Enter the URL of a file:")
 
     def _render_module(self, request):
-        """ Render module
+        """Render module
 
         Args:
             request:
@@ -25,7 +24,7 @@ class RemoteBlobHostModule(AbstractInputModule):
         return AbstractInputModule._render_module(self, request)
 
     def _retrieve_data(self, request):
-        """ Return module's data
+        """Return module's data
 
         Args:
             request:
@@ -55,7 +54,7 @@ class RemoteBlobHostModule(AbstractInputModule):
         )
 
     def _render_data(self, request):
-        """ Return module's data rendering
+        """Return module's data rendering
 
         Args:
             request:

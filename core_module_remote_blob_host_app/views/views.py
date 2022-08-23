@@ -1,13 +1,15 @@
 """ Remote BLOB host module views
 """
+from core_parser_app.tools.modules.views.builtin.input_module import AbstractInputModule
+from xml_utils.xsd_tree.operations.xml_entities import XmlEntities
 from core_module_blob_host_app.views.views import BlobHostModule
 from core_module_remote_blob_host_app.settings import AUTO_ESCAPE_XML_ENTITIES
 from core_module_remote_blob_host_app.views.forms import URLForm
-from core_parser_app.tools.modules.views.builtin.input_module import AbstractInputModule
-from xml_utils.xsd_tree.operations.xml_entities import XmlEntities
 
 
 class RemoteBlobHostModule(AbstractInputModule):
+    """Remote Blob Host Module"""
+
     def __init__(self):
         """Initialize the module"""
         AbstractInputModule.__init__(self, label="Enter the URL of a file:")

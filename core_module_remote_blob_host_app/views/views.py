@@ -1,6 +1,8 @@
 """ Remote BLOB host module views
 """
-from core_parser_app.tools.modules.views.builtin.input_module import AbstractInputModule
+from core_parser_app.tools.modules.views.builtin.input_module import (
+    AbstractInputModule,
+)
 from xml_utils.xsd_tree.operations.xml_entities import XmlEntities
 from core_module_blob_host_app.views.views import BlobHostModule
 from core_module_remote_blob_host_app.settings import AUTO_ESCAPE_XML_ENTITIES

@@ -1,5 +1,6 @@
 """ Remote BLOB host module views
 """
+
 from core_parser_app.tools.modules.views.builtin.input_module import (
     AbstractInputModule,
 )

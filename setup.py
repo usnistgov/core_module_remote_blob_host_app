@@ -1,5 +1,4 @@
-""" Setup core module remote Blob host app
-"""
+"""Setup core module remote Blob host app"""
 
 from os import chdir, pardir
 from os.path import join, exists, dirname, normpath, abspath

@@ -1,5 +1,4 @@
-""" Remote blob host forms
-"""
+"""Remote blob host forms"""
 
 from django import forms
 
